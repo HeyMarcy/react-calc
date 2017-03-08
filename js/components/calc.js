@@ -1,4 +1,8 @@
 import React from 'react';
+import Button from './button';
+import InputField from './input-field';
+import OutputField from './output-field';
+
 
 export default class Calc extends React.Component {
   constructor(props) {
@@ -10,7 +14,7 @@ export default class Calc extends React.Component {
   }
   render() {
     return(
-      
+
     )
   }
 }

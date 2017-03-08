@@ -12,14 +12,21 @@ export default class Calc extends React.Component {
       inputString: '',
       outputString: ''
     }
+
+    this.addInput = this.addInput.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
   }
 
-  addInput(e) {
+  addInput(e, num) {
     console.log("add input");
-    console.log(e.target.id);
+    console.log(num);
+    this.setState((prevState) => {
+      return {inputString: prevState.inputString+num};
+    });
+    console.log(this.state.inputString);
   }
 
-  onSubmit(e) {
+  onSubmit(e, num) {
     console.log("submit");
     console.log(e.target.id);
   }

@@ -15,6 +15,7 @@ export default class Calc extends React.Component {
 
     this.addInput = this.addInput.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+    this.onClear = this.onClear.bind(this);
   }
 
   addInput(e, num) {
@@ -30,12 +31,18 @@ export default class Calc extends React.Component {
     console.log("submit");
     this.setState({outputString: eval(this.state.inputString)})
   }
+  onClear() {
+    console.log("clear fields");
+    this.setState({outputString: ""});
+    this.setState({inputString: ""})
+  }
 
   render() {
     return(
       <div>
-        <InputField displayInput='0' />
+        <InputField displayInput={this.state.inputString} />
         <OutputField displayOutput={this.state.outputString} />
+        <Button text="clear" callback={this.onClear}/>
         <Button text="1" callback={this.addInput}/>
         <Button text="2" callback={this.addInput}/>
         <Button text="3" callback={this.addInput}/>
@@ -48,7 +55,7 @@ export default class Calc extends React.Component {
         <Button text="0" callback={this.addInput}/>
         <Button text="+" callback={this.addInput}/>
         <Button text="-" callback={this.addInput}/>
-        <Button text="x" callback={this.addInput}/>
+        <Button text="*" callback={this.addInput}/>
         <Button text="/" callback={this.addInput}/>
         <Button text="=" callback={this.onSubmit}/>
       </div>

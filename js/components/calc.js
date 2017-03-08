@@ -15,11 +15,13 @@ export default class Calc extends React.Component {
   }
 
   addInput(e) {
-      console.log("add input");
+    console.log("add input");
+    console.log(e.target.id);
   }
 
   onSubmit(e) {
     console.log("submit");
+    console.log(e.target.id);
   }
 
   render() {

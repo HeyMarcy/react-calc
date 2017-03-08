@@ -28,14 +28,14 @@ export default class Calc extends React.Component {
 
   onSubmit(e, num) {
     console.log("submit");
-    console.log(e.target.id);
+    this.setState({outputString: eval(this.state.inputString)})
   }
 
   render() {
     return(
       <div>
         <InputField displayInput='0' />
-        <OutputField output={this.state.outputString} />
+        <OutputField displayOutput={this.state.outputString} />
         <Button text="1" callback={this.addInput}/>
         <Button text="2" callback={this.addInput}/>
         <Button text="3" callback={this.addInput}/>
